@@ -1,6 +1,7 @@
 <?php
 
 namespace Fragmentscreen\LOGS\recordHandlers;
+use FAE\datadeposition\recordHandlers\recordSchemaHandler;
 
 /**
  * LOGS format. LOGS is a research data management platform that manages raw data from instruments and extracts and stores metadata (formally owned by SIGNALS GmBH, now SciY)

@@ -1,6 +1,7 @@
 <?php
 
 namespace Fragmentscreen\LOGS\fieldHandlers;
+use FAE\datadeposition\fieldHandlers\fieldHandler;
 
 use FAE\logging\logger;
 
