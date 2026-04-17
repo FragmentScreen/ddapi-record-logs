@@ -1,6 +1,7 @@
 <?php
 
 namespace Fragmentscreen\LOGS\fieldHandlers;
+
 use FAE\datadeposition\fieldHandlers\JSONHandler;
 
 use FAE\logging\logger;
@@ -12,7 +13,7 @@ class LOGSDatasetHandler extends JSONHandler
 {
   protected function validate($content): bool
   {
-    parent::validate($content);
+    return parent::validate($content);
   }
 
   public function type(): string
