@@ -1,32 +1,23 @@
 <?php
 
 namespace Fragmentscreen\LOGS\fieldHandlers;
-use FAE\datadeposition\fieldHandlers\fieldHandler;
+use FAE\datadeposition\fieldHandlers\JSONHandler;
 
 use FAE\logging\logger;
 
 /**
  * Field handler for LOGS Dataset content.
  */
-class LOGSDatasetHandler extends fieldHandler
+class LOGSDatasetHandler extends JSONHandler
 {
   protected function validate($content): bool
   {
-    // Do some v. basic validation
-    if (is_object($content)) {
-      return true;
-    }
-
-    if (empty(json_decode($content))) {
-      return false;
-    }
-
-    return true;
+    parent::validate($content);
   }
 
   public function type(): string
   {
-    return 'LOGSDataset';
+    return parent::type() . '_LOGS_Dataset';
   }
 
   public function doOutput(): mixed
