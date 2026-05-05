@@ -7,22 +7,11 @@ use FAE\datadeposition\fieldHandlers\JSONHandler;
 /**
  * Field handler for LOGS Sample content.
  */
-class LOGSSampleHandler extends JSONHandler
+class LOGSSampleHandler extends LOGSJSONHandler
 {
-  protected function validate($content): bool
-  {
-    return parent::validate($content);
-  }
-
   public function type(): string
   {
-    return parent::type() . '_LOGS_Sample';
-  }
-
-  public function doOutput(): mixed
-  {
-
-    return $this->getField()['content'];
+    return parent::type() . '_Sample';
   }
 
   public function description(): string 

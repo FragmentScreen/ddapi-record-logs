@@ -9,22 +9,11 @@ use FAE\logging\logger;
 /**
  * Field handler for LOGS Dataset content.
  */
-class LOGSDatasetHandler extends JSONHandler
+class LOGSDatasetHandler extends LOGSJSONHandler
 {
-  protected function validate($content): bool
-  {
-    return parent::validate($content);
-  }
-
   public function type(): string
   {
-    return parent::type() . '_LOGS_Dataset';
-  }
-
-  public function doOutput(): mixed
-  {
-
-    return $this->getField()['content'];
+    return parent::type() . '_Dataset';
   }
 
   public function description(): string 
