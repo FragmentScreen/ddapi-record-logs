@@ -2,12 +2,12 @@
 
 namespace Fragmentscreen\LOGS\fieldHandlers;
 
-use FAE\datadeposition\fieldHandlers\JSONHandler;
+use FAE\datadeposition\fieldInterfaces\Sample;
 
 /**
  * Field handler for LOGS Sample content.
  */
-class LOGSSampleHandler extends LOGSJSONHandler
+class LOGSSampleHandler extends LOGSJSONHandler implements Sample
 {
   public function type(): string
   {

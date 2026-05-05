@@ -2,14 +2,12 @@
 
 namespace Fragmentscreen\LOGS\fieldHandlers;
 
-use FAE\datadeposition\fieldHandlers\JSONHandler;
-
-use FAE\logging\logger;
+use FAE\datadeposition\fieldInterfaces\Experiment;
 
 /**
  * Field handler for LOGS Experiment content.
  */
-class LOGSExperimentHandler extends LOGSJSONHandler
+class LOGSExperimentHandler extends LOGSJSONHandler implements Experiment
 {
   public function type(): string
   {

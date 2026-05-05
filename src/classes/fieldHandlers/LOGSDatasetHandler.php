@@ -2,14 +2,12 @@
 
 namespace Fragmentscreen\LOGS\fieldHandlers;
 
-use FAE\datadeposition\fieldHandlers\JSONHandler;
-
-use FAE\logging\logger;
+use FAE\datadeposition\fieldInterfaces\Dataset;
 
 /**
  * Field handler for LOGS Dataset content.
  */
-class LOGSDatasetHandler extends LOGSJSONHandler
+class LOGSDatasetHandler extends LOGSJSONHandler implements Dataset
 {
   public function type(): string
   {
