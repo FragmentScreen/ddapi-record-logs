@@ -1,38 +1,15 @@
 <?php
 
 namespace Fragmentscreen\LOGS\fieldHandlers;
-use FAE\datadeposition\fieldHandlers\fieldHandler;
-
-use FAE\logging\logger;
 
 /**
  * Field handler for LOGS Mix content.
  */
-class LOGSMixHandler extends fieldHandler
+class LOGSMixHandler extends LOGSJSONHandler
 {
-  protected function validate($content): bool
-  {
-    // Do some v. basic validation
-    if (is_object($content)) {
-      return true;
-    }
-
-    if (empty(json_decode($content))) {
-      return false;
-    }
-
-    return true;
-  }
-
   public function type(): string
   {
-    return 'LOGSMix';
-  }
-
-  public function doOutput(): mixed
-  {
-
-    return $this->getField()['content'];
+    return parent::type() . '_Mix';
   }
 
   public function description(): string 

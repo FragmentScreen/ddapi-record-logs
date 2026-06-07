@@ -1,38 +1,17 @@
 <?php
 
 namespace Fragmentscreen\LOGS\fieldHandlers;
-use FAE\datadeposition\fieldHandlers\fieldHandler;
 
-use FAE\logging\logger;
+use FAE\datadeposition\fieldInterfaces\Experiment;
 
 /**
  * Field handler for LOGS Experiment content.
  */
-class LOGSExperimentHandler extends fieldHandler
+class LOGSExperimentHandler extends LOGSJSONHandler implements Experiment
 {
-  protected function validate($content): bool
-  {
-    // Do some v. basic validation
-    if (is_object($content)) {
-      return true;
-    }
-
-    if (empty(json_decode($content))) {
-      return false;
-    }
-
-    return true;
-  }
-
   public function type(): string
   {
-    return 'LOGSExperiment';
-  }
-
-  public function doOutput(): mixed
-  {
-
-    return $this->getField()['content'];
+    return parent::type() . '_Experiment';
   }
 
   public function description(): string 
